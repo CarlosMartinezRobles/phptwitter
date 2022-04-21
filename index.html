@@ -84,7 +84,7 @@
 
       <!-- post starts -->
       <?php 
-        foreach ($jsonData['tweets'] as $tweet):
+        foreach ($tweets as $tweet):
         ?>
 
       <div class="post">
@@ -99,14 +99,14 @@
           <div class="post__header">
             <div class="post__headerText">
               <h3>
-                <?php echo $tweet ['author']; ?>
+                <?php echo $tweet->getUser(); ?>
                 <span class="post__headerSpecial"
-                  ><span class="material-icons post__badge"> verified </span>@<?php echo $tweet ['user']; ?></span
+                  ><span class="material-icons post__badge"> verified </span>@<?php echo $tweet->getUserName(); ?></span
                 >
               </h3>
             </div>
             <div class="post__headerDescription">
-              <p><?php echo $tweet ['text']; ?></p>
+              <p><?php echo $tweet->getText(); ?></p>
             </div>
           </div>
           <img
